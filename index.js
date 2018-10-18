@@ -36,5 +36,9 @@ app.get('/birth', function(req, res) {
   res.render('pages/birth');
 });
 
+app.get('/about', function(req, res) {
+  res.render('pages/about');
+});
+
 app.listen(PORT);
 console.log('3000 is the magic port');
