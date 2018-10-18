@@ -2,6 +2,7 @@
 // load the things we need
 var express = require('express');
 var app = express();
+const PORT = process.env.PORT || 3000
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -31,5 +32,5 @@ app.get('/birth', function(req, res) {
   res.render('pages/birth');
 });
 
-app.listen(3000);
+app.listen(PORT);
 console.log('3000 is the magic port');
