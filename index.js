@@ -16,6 +16,10 @@ app.get('/meditation', function(req, res) {
   res.render('pages/meditation');
 });
 
+app.get('/encapsulation', function(req, res) {
+  res.render('pages/encapsulation');
+});
+
 app.get('/herbs', function(req, res) {
   res.render('pages/herbs');
 });
