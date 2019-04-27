@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: >-
+  An Amazon S3 trigger that retrieves metadata for the object that has been
+  updated.
+Parameters:
+
+Resources:
+  fivestoneshealth.com:
+    Type: 'AWS::S3::Bucket'
