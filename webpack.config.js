@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const config = {
   entry: [
     './views/pages/index.ejs'
@@ -64,8 +65,15 @@ const config = {
     }),
     new CopyPlugin([
       { from: 'public'},
+      { from: '.htaccess' },
+      { from: 'manifest.json' }
     ]),
-    new CleanWebpackPlugin(['dist/*'])
+    new CleanWebpackPlugin(['dist/*']),
+    new WorkboxPlugin.GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      cleanupOutdatedCaches: true
+    })
   ]
 };
  
