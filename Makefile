@@ -12,4 +12,4 @@ webpack:
 	node_modules/.bin/webpack
 
 run:
-	cd dist && serve
+	npm run start:dev

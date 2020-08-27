@@ -3309,3 +3309,9 @@ input, select, textarea {
 			}
 
 		}
+
+		.callout{
+			background-color:#e1e1e1;
+			padding:1em 1em;
+			border:1px solid #585858;
+		 }
