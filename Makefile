@@ -1,3 +1,5 @@
+deploy: webpack sync
+
 sync:
 	rsync -r -a -v -e "ssh -p2222" --delete `pwd`/dist/ fivest36@fivestoneshealth.com:/home/fivest36/public_html/
 

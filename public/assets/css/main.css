@@ -3314,4 +3314,5 @@ input, select, textarea {
 			background-color:#e1e1e1;
 			padding:1em 1em;
 			border:1px solid #585858;
+			border-radius: 4px;
 		 }
