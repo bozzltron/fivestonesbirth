@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fivestoneshealth.com/sitemap.xml
+
+# Block crawling of waste
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /views/

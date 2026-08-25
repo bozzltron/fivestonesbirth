@@ -67,7 +67,9 @@ module.exports = {
       patterns: [
         { from: 'public', to: '.', noErrorOnMissing: true },
         { from: '.htaccess', noErrorOnMissing: true },
-        { from: 'manifest.json' }
+        { from: 'manifest.json' },
+        { from: 'robots.txt', noErrorOnMissing: true },
+        { from: 'sitemap.xml', noErrorOnMissing: true }
       ]
     }),
     new CleanWebpackPlugin(),

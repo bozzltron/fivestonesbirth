@@ -1,25 +1,78 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
-		<title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Five Stones Services' %></title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Five Stones Health offers massage, energy work, buccal massage, emotion coding, meditation, yoga, and birth services in Colorado Springs, CO.' %>" />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph -->
+		<meta property="og:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'Five Stones Health' %>" />
+		<meta property="og:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Wellness services in Colorado Springs including massage, buccal massage, emotion coding, meditation, yoga, and birth support.' %>" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://fivestoneshealth.com<%= typeof pageUrl !== 'undefined' ? pageUrl : '' %>" />
+		<meta property="og:image" content="https://fivestoneshealth.com/images/face.webp" />
+		<meta property="og:site_name" content="Five Stones Health" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="<%= typeof pageTitle !== 'undefined' ? pageTitle : 'Five Stones Health' %>" />
+		<meta name="twitter:description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Wellness services in Colorado Springs, CO.' %>" />
+
+		<link rel="canonical" href="https://fivestoneshealth.com<%= typeof pageUrl !== 'undefined' ? pageUrl : '' %>" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<link rel="manifest" href="/manifest.json">
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+
+		<!-- JSON-LD Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Five Stones Health",
+			"description": "Wellness services including massage, buccal massage, emotion coding, meditation, yoga, and birth support in Colorado Springs, CO.",
+			"url": "https://fivestoneshealth.com",
+			"telephone": "+1-402-981-7044",
+			"email": "dustibosworth@gmail.com",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "1581 York Road",
+				"addressLocality": "Colorado Springs",
+				"addressRegion": "CO",
+				"postalCode": "80918",
+				"addressCountry": "US"
+			},
+			"geo": {
+				"@type": "GeoCoordinates",
+				"latitude": "38.8986",
+				"longitude": "-104.7481"
+			},
+			"openingHours": ["Mo 07:00-15:00", "Tu 08:00-15:00", "We 08:00-15:00", "Th 07:00-15:00", "Fr 07:00-14:30"],
+			"priceRange": "$$",
+			"image": "https://fivestoneshealth.com/images/logo.png",
+			"areaServed": {
+				"@type": "City",
+				"name": "Colorado Springs"
+			},
+			"serviceType": ["Massage Therapy", "Energy Work", "Buccal Massage", "Emotion Coding", "Meditation", "Yoga", "Birth Doula", "Placenta Encapsulation"]
+		}
+		</script>
+
+		<title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'Five Stones Health' %></title>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 			<div id="wrapper">
-					
+
 				<!-- Header -->
 					<header id="header">
-						
+
 						<div class="inner">
 
 							<!-- Logo -->
 								<a href="/" class="logo">
-									<span class="symbol"><img src="images/logo.png" alt="" /></span>
+									<span class="symbol"><img src="images/logo.png" alt="Five Stones Health Logo" /></span>
 								</a>
 
 							<!-- Nav -->
