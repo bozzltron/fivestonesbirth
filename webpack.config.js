@@ -1,28 +1,28 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-const config = {
-  entry: [
-    './views/pages/index.ejs'
-  ],
+
+module.exports = {
+  mode: 'production',
+  entry: './views/pages/index.ejs',
   output: {
     path: __dirname + "/dist"
   },
   module: {
     rules: [
       {
-          test: /\.ejs$/,
-          use: [
-              {
-                loader: "ejs-webpack-loader",
-                options: {
-                  htmlmin: true,
-                  minifyJS: true,
-                  minifyCSS: true
-                }
-              }
-          ]
+        test: /\.ejs$/,
+        use: [
+          {
+            loader: "ejs-webpack-loader",
+            options: {
+              htmlmin: true,
+              minifyJS: true,
+              minifyCSS: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -36,12 +36,12 @@ const config = {
       filename: 'birth.html'
     }),
     new HtmlWebpackPlugin({
-      template: '!!ejs-webpack-loader!views/pages/encapsulation.ejs',
-      filename: 'encapsulation.html'
+      template: '!!ejs-webpack-loader!views/pages/buccal-massage.ejs',
+      filename: 'buccal-massage.html'
     }),
     new HtmlWebpackPlugin({
-      template: '!!ejs-webpack-loader!views/pages/herbs.ejs',
-      filename: 'herbs.html'
+      template: '!!ejs-webpack-loader!views/pages/emotion-coding.ejs',
+      filename: 'emotion-coding.html'
     }),
     new HtmlWebpackPlugin({
       template: '!!ejs-webpack-loader!views/pages/index.ejs',
@@ -63,19 +63,19 @@ const config = {
       template: '!!ejs-webpack-loader!views/pages/yoga.ejs',
       filename: 'yoga.html'
     }),
-    new CopyPlugin([
-      { from: 'public'},
-      { from: '.htaccess' },
-      { from: 'manifest.json' }
-    ]),
-    new CleanWebpackPlugin(['dist/*']),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: '.', noErrorOnMissing: true },
+        { from: '.htaccess', noErrorOnMissing: true },
+        { from: 'manifest.json' }
+      ]
+    }),
+    new CleanWebpackPlugin(),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true,
-      cleanupOutdatedCaches: true
+      cleanupOutdatedCaches: true,
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
     })
   ]
 };
- 
-module.exports = config;
- 

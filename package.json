@@ -1,29 +1,28 @@
 {
   "name": "fivestonebirth.com",
   "version": "1.0.0",
-  "engines": {
-    "node": "8.12.0"
-  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack serve",
+    "build": "webpack",
+    "deploy": "npm run build && rsync -r -a -v -e \"ssh -p2222\" --delete dist/ fivest36@fivestoneshealth.com:/home/fivest36/public_html/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ejs": "^2.7.4",
-    "express": "^4.17.1"
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^1.0.1",
-    "copy-webpack-plugin": "^5.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "ejs-webpack-loader": "^2.2.2",
-    "html-webpack-plugin": "^3.2.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "workbox-webpack-plugin": "^4.3.1"
+    "html-webpack-plugin": "^5.6.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "workbox-webpack-plugin": "^7.3.0"
   }
 }
